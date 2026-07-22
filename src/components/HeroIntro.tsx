@@ -17,11 +17,12 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
 
   return (
     <section id="hero" className="relative overflow-hidden pt-12 pb-20 bg-stone-950 text-white border-b border-orange-500/20">
-      {/* Real Flying Burgers Floating Background Behind Introduction & About/Story (NO CADRE / NO BORDER FRAME) */}
+      {/* Real Flying Burger & Ambient Orange Shadow Glows Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden flex items-center justify-center z-0">
-        {/* Warm Background Radial Glows */}
-        <div className="absolute w-[800px] h-[800px] bg-orange-600/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute w-[500px] h-[500px] bg-amber-500/15 rounded-full blur-2xl" />
+        {/* Warm Background Ambient Orange Shadow Glows */}
+        <div className="absolute top-10 sm:top-16 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-orange-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-[42%] w-[550px] sm:w-[800px] h-[550px] sm:h-[800px] bg-orange-500/20 rounded-full blur-3xl" />
+        <div className="absolute top-[70%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-amber-600/10 rounded-full blur-3xl" />
 
         {/* Top Main Floating Flying Gourmet Burger */}
         <motion.div
@@ -35,7 +36,7 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="absolute top-10 opacity-35 dark:opacity-30 blur-[0.5px] transform scale-125 sm:scale-150 max-w-lg w-full aspect-square"
+          className="absolute top-6 sm:top-10 opacity-35 dark:opacity-30 blur-[0.5px] transform scale-125 sm:scale-150 max-w-md sm:max-w-lg w-full aspect-square"
         >
           <img
             src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80"
@@ -45,25 +46,47 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
           />
         </motion.div>
 
-        {/* Mid-Section Floating Flying Burger Behind About & Story */}
+        {/* Secondary Left Flying Smash Burger */}
         <motion.div
           animate={{
-            y: [-16, 16, -16],
-            rotate: [5, -5, 5],
-            scale: [0.95, 1.05, 0.95],
+            y: [20, -20, 20],
+            x: [-15, 15, -15],
+            rotate: [8, -8, 8],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute -left-16 sm:left-4 top-1/4 w-44 sm:w-72 aspect-square opacity-20 sm:opacity-25 blur-[1px]"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80"
+            alt="Flying Smash Burger Left"
+            className="w-full h-full object-cover filter contrast-125 drop-shadow-2xl"
+            referrerPolicy="no-referrer"
+          />
+        </motion.div>
+
+        {/* Secondary Right Flying Bacon Cheeseburger */}
+        <motion.div
+          animate={{
+            y: [-18, 18, -18],
+            x: [10, -10, 10],
+            rotate: [-10, 10, -10],
           }}
           transition={{
             duration: 6.5,
             repeat: Infinity,
             ease: 'easeInOut',
-            delay: 0.5,
+            delay: 1,
           }}
-          className="absolute top-[42%] opacity-30 blur-[0.5px] transform scale-125 sm:scale-140 max-w-md w-full aspect-square"
+          className="absolute -right-16 sm:right-4 bottom-1/4 w-44 sm:w-72 aspect-square opacity-20 sm:opacity-25 blur-[1px]"
         >
           <img
-            src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-            alt="Flying Bacon Burger Background About"
-            className="w-full h-full object-cover filter contrast-125 drop-shadow-[0_20px_50px_rgba(249,115,22,0.35)]"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+            alt="Flying Burger Right"
+            className="w-full h-full object-cover filter contrast-125 drop-shadow-2xl"
             referrerPolicy="no-referrer"
           />
         </motion.div>
@@ -169,34 +192,40 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
             </p>
           </div>
 
-          {/* Story Pillars - Frameless floating elements */}
+          {/* Story Pillars - Frameless floating elements with soft orange ambient glows */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="flex flex-col items-center text-center p-4">
-              <div className="w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-lg">
+            {/* 500°F Sear Craft */}
+            <div className="relative group p-4 flex flex-col items-center text-center">
+              <div className="absolute -inset-2 bg-orange-500/10 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
                 <Flame className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white font-serif mb-2">500°F Sear Craft</h3>
-              <p className="text-xs text-stone-300 leading-relaxed">
+              <h3 className="relative text-lg font-bold text-white font-serif mb-2">500°F Sear Craft</h3>
+              <p className="relative text-xs text-stone-300 leading-relaxed">
                 Every smash burger patty is smashed live to order on blazing hot cast iron to create ultra-crispy lace edges while keeping the center tender and juicy.
               </p>
             </div>
 
-            <div className="flex flex-col items-center text-center p-4">
-              <div className="w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-lg">
+            {/* Signature Orange Glaze */}
+            <div className="relative group p-4 flex flex-col items-center text-center">
+              <div className="absolute -inset-2 bg-orange-500/10 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
                 <Sparkles className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white font-serif mb-2">Signature Orange Glaze</h3>
-              <p className="text-xs text-stone-300 leading-relaxed">
+              <h3 className="relative text-lg font-bold text-white font-serif mb-2">Signature Orange Glaze</h3>
+              <p className="relative text-xs text-stone-300 leading-relaxed">
                 House-infused orange chili reductions, hot citrus honey drizzles, and hand-whipped aioli crafted fresh every morning in our kitchen.
               </p>
             </div>
 
-            <div className="flex flex-col items-center text-center p-4">
-              <div className="w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-lg">
+            {/* Organic & Local */}
+            <div className="relative group p-4 flex flex-col items-center text-center">
+              <div className="absolute -inset-2 bg-orange-500/10 rounded-full blur-xl opacity-50 group-hover:opacity-100 transition-opacity pointer-events-none" />
+              <div className="relative w-12 h-12 rounded-2xl bg-orange-950/90 text-orange-400 border border-orange-500/40 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(249,115,22,0.4)]">
                 <UtensilsCrossed className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-white font-serif mb-2">Organic & Local</h3>
-              <p className="text-xs text-stone-300 leading-relaxed">
+              <h3 className="relative text-lg font-bold text-white font-serif mb-2">Organic & Local</h3>
+              <p className="relative text-xs text-stone-300 leading-relaxed">
                 48-hour fermented woodfired sourdough pizza bases, authentic slow-braised consomé birria tacos, and locally sourced organic produce.
               </p>
             </div>
@@ -282,4 +311,5 @@ export const HeroIntro: React.FC<HeroIntroProps> = ({
     </section>
   );
 };
+
 
