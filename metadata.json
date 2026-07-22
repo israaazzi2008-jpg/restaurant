@@ -1,0 +1,6 @@
+{
+  "name": "L'Orange Gourmet - Burgers, Tacos & Pizza",
+  "description": "Gourmet restaurant featuring artisan burgers, delicious tacos, authentic pizzas, online reservations, and real-time order tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
